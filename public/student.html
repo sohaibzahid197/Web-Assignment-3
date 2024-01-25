@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form with all controls</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/dashboard" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="/show-data" class="nav-link">Records</a></li>
+        <li class="nav-item"><a href="/faqs" class="nav-link">FAQs</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link">About Me</a></li>
+        </ul>
+      </header>
+    </div>
+    <hr>
+    <div class="container">
+      <h1>User Registration Form</h1>
+
+      <form action="form-handler" method="POST">
+        <h2>Student Registration Form</h2>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input class="form-control" id="name" name="name" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input class="form-control" id="password" name="password" size="20" type="password">
+        </div>
+
+        <div class="form-group">
+          <label>Subjects</label>
+          <div class="form-check">
+            <input class="form-check-input" name="Algorithms" type="checkbox" value="Algoritims">
+            <label class="form-check-label">Algorithms</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="OOP" type="checkbox" value="OOP">
+            <label class="form-check-label">OOP</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="DataStructures" value="DataStructures" type="checkbox" checked>
+            <label class="form-check-label">Data Structures</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Credit Card</label>
+          <div class="form-check">
+            <input class="form-check-input" name="credit_card" type="radio" value="Visa" checked>
+            <label class="form-check-label">Visa</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="credit_card" type="radio" value="Master Card">
+            <label class="form-check-label">Master Card</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="credit_card" type="radio" value="American Express">
+            <label class="form-check-label">American Express</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City</label>
+          <select class="form-control" id="city" name="city">
+            <option value="Lahore" selected>Lahore</option>
+            <option value="Karachi">Karachi</option>
+            <option value="Islamabad">Islamabad</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="languages">Favorite Languages</label>
+          <select class="form-control" multiple="multiple" id="languages" name="languages" size="3">
+            <option>Java</option>
+            <option>PHP</option>
+            <option>Ruby</option>
+            <option>C</option>
+            <option>C#</option>
+          </select>
+        </div>
+<br>
+        <button class="btn btn-success" type="submit">Submit</button>
+      </form>
+    </div>
+
+  
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

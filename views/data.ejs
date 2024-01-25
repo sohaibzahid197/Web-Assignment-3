@@ -1,0 +1,46 @@
+<%-include("header");%>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Passwords</th>
+                    <th>Subjects</th>
+                    <th>Credit Card</th>
+                    <th>Express City</th>
+                    <th>Languages</th>
+                    <th>Profile Pic</th>
+                    <th>CV</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < jsonData.length; i++) { %>
+                <tr>
+                    <td><%=jsonData[i].name%></td>
+                    <td><%=jsonData[i].password%></td>
+                    <td><ul>
+                        
+                        <% if(jsonData[i].OOP) { %>
+                           <li> <%=jsonData[i].OOP%> <br><</li>
+                        <% } %> 
+                        <% if(jsonData[i].Algorithms) { %>
+                          <li>  <%=jsonData[i].Algorithms%> <br></li>
+                        <% } %>
+                        <% if(jsonData[i].DataStructures) { %>
+                           <li> <%=jsonData[i].DataStructures%></li>
+                        <% } %>
+                    </ul>
+                    </td>
+                    <td><%=jsonData[i].credit_card%></td>
+                    <td><%=jsonData[i].city%></td>
+                    <td><%=jsonData[i].languages%></td>
+                    <td><img src="/upload/images/<%=jsonData[i].profile%>" style=" width:80 px; height: 80px;" alt="profile"></td>
+                    <td><a href="download?filename=<%=jsonData[i].cv%>">Download CV</a></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+  <%-include("footer");%>
+
+

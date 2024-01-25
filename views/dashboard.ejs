@@ -1,0 +1,43 @@
+<%- include("header"); %>
+<div class="container">
+  <h1 class="display-5"><strong>User Table</strong></h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (user != null) { %>
+        <% for (let i = 0; i < user.length; i++) { %>
+          <tr>
+            <td><%= user[i].id %></td>
+            <td><%= user[i].name %></td>
+            <td><%= user[i].city %></td>
+            <td>
+              <a href="view?id=<%= user[i].id %>" class="btn btn-primary">View Details</a>
+              <% if (authenticated) { %>
+                <a href="edit?id=<%= user[i].id %>" class="btn btn-success">Edit Details</a>
+                <a href="delete?id=<%= user[i].id %>" class="btn btn-danger">Delete User</a>
+              <% } %>
+            </td>
+          </tr>
+        <% } %>
+      <% } %>
+    </tbody>
+    
+    <% if (!authenticated) { %>
+      <a style="margin-left: 80%; margin-top: -7%;" href="/login" class="btn btn-primary btn-lg active">Login As Admin</a>
+    <% } %>
+  </table>
+
+  <% if (authenticated) { %>
+    <a href="/student" class="btn btn-primary">Add New Record</a>
+  <% } %>
+</div>
+<%- include("footer"); %>
+

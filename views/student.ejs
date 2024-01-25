@@ -1,0 +1,74 @@
+<%-include("header");%>
+    <div class="container">
+      <form action="form-handler" method="POST" enctype="multipart/form-data">
+        <h2>Student Registration Form</h2>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input class="form-control" name="name" type="text">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input class="form-control" name="password" size="20" type="password" />
+        </div>
+        <div class="form-group">
+          <label>Subjects</label>
+          <div class="form-check">
+            <input class="form-check-input" name="Algorithms" type="checkbox" value="Algorithms" id="algorithmsCheck">
+            <label class="form-check-label" for="algorithmsCheck">Algorithms</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="OOP" type="checkbox" value="OOP" id="oopCheck">
+            <label class="form-check-label" for="oopCheck">OOP</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" checked="checked" name="DataStructures" value="DataStructures" type="checkbox" id="dataStructuresCheck">
+            <label class="form-check-label" for="dataStructuresCheck">Data Structures</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Credit Card</label>
+          <div class="form-check">
+            <input class="form-check-input" checked="checked" name="credit_card" type="radio" value="Visa" id="visaRadio">
+            <label class="form-check-label" for="visaRadio">Visa</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="credit_card" type="radio" value="Master Card" id="masterCardRadio">
+            <label class="form-check-label" for="masterCardRadio">Master Card</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="credit_card" type="radio" value="American Express" id="amexRadio">
+            <label class="form-check-label" for="amexRadio">American Express</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <select class="form-control" name="city" id="citySelect">
+            <% cities.forEach((city)=> { %>
+              <option value="<%=city%>"> <%=city%></option>
+            <% }); %>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="languages">Favorite Languages</label>
+          <select class="form-control" multiple="multiple" name="languages" size="3" id="languagesSelect">
+            <% languages.forEach((language)=> { %>
+              <option value="<%=language%>"> <%=language%></option>
+            <% }); %>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="fileInput" class="form-label">Upload File</label>
+          <input class="form-control" required name="file" type="file" id="fileInput">
+        </div>
+        <div class="mb-3">
+          <label for="pictureInput"  class="form-label" >Select Picture</label>
+          <input class="form-control" required name="pic" type="file" id="pictureInput" >
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </form>
+    </div>
+</div>
+
+<%-include("footer");%>
